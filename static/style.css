@@ -1,0 +1,131 @@
+/* Reset some default styles for better consistency */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color and font family */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header */
+header {
+    text-align: center;
+    background-color: #0078d4; /* Header background color */
+    color: #fff; /* Header text color */
+    padding: 20px;
+}
+
+/* Style the main content container */
+.main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style the button container */
+.button-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style the "Display Images" button */
+.display-button {
+    background-color: #0078d4; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.display-button:hover {
+    background-color: #005a9e; /* Button background color on hover */
+}
+
+/* Style the image container */
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center-align images horizontally */
+}
+
+/* Style the individual image cards */
+.image-card {
+    /* Allow the image card to adjust its width */
+    margin: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #fff;
+}
+
+.image-card img {
+    max-width: 1000px; /* Automatically shrink the image to fit the container */
+    height: auto; /* Maintain the aspect ratio of the images */
+}
+
+/* Style the footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #0078d4; /* Footer background color */
+    color: #fff; /* Footer text color */
+}
+
+/* Style for the floating "Log All Descriptions" button */
+.log-all-button {
+    position: fixed;
+    top: 60px;
+    right: 282px;
+    background-color: #a066ec;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Ensure the button appears above other content */
+}
+
+.log-all-button:hover {
+    background-color: #005a9e;
+}
+/* Style for the modal */
+.modal {
+    display: none; /* Hide the modal by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Style for the modal content */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* Style for the close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

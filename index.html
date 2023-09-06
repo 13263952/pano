@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>Panoramic Dental X-rays</title>
+</head>
+
+<body>
+    <header>
+        <h1>Panoramic Dental X-rays</h1>
+    </header>
+    <main class="main">
+        <div class="container">
+          
+            <div class="button-container">
+                <form action="/display_images" method="get">
+                    <button type="submit" class="display-button">New X-ray Samples</button>
+                </form>
+                <button id="log-all-button" class="log-all-button">Log All Descriptions</button>
+            </div>
+            <div class="image-container">
+                {% block images %}
+                {% for image in images %}
+                <div class="image-card">
+                    <img src="data:image/png;base64,{{ image.image }}" alt="X-ray Image">
+                    <label for="{{image.name}}_image_description_{{ loop.index }}">Image Description:</label>
+                    <form action="/save_descriptions" method="post" onsubmit="return saveDescription(this, this.closest('.image-card').parentElement)">
+                        <input type="text" id="image_description_{{ loop.index }}"
+                            name="{{image.name}}">
+                        <button type="submit" class="submit-button">Save This Descriptions</button>
+                    </form>
+                </div>
+                {% endfor %}
+                {% endblock %}
+            </div>
+        </div>
+    </main>
+ 
+
+    <footer>
+        <p>&copy; This panoramic x-rays consists of anonymized and deidentified panoramic dental X-rays of 116 patients, taken at Noor Medical Imaging Center, Qom, Iran. The subjects cover a wide range of dental conditions from healthy, to partial and complete edentulous cases. </p>
+    </footer>
+    
+</body>
+
+</html>
